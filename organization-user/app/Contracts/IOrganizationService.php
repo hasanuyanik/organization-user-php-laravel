@@ -6,9 +6,8 @@ interface IOrganizationService {
     /**
      * @param array $data
      * 
-     * @return bool
      */
-    public function create(array $data): bool;
+    public function create(array $data);
 
     /**
      * @param int $id

@@ -1,10 +1,12 @@
 <?php
 
-namespace Http\Services;
+namespace App\Http\Services;
 
+use App\Contracts\IOrganizationService;
+use App\Http\Repositories\OrganizationRepository;
 use Illuminate\Database\Eloquent\Collection;
 
-class OrganizationRepository
+class OrganizationService implements IOrganizationService
 {
     
     /**
@@ -20,9 +22,8 @@ class OrganizationRepository
     /**
      * @param array $data
      * 
-     * @return bool
      */
-    public function create(array $data): bool
+    public function create(array $data)
     {
         return $this->repository->create($data);
     }

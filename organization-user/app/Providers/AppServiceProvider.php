@@ -3,7 +3,8 @@
 namespace App\Providers;
 
 use App\Contracts\IOrganizationService;
-use Http\Services\OrganizationService;
+use App\Http\Services\OrganizationService;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -15,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(IOrganizationService::class, OrganizationService::class);
+        App::bind(IOrganizationService::class, OrganizationService::class);
     }
 
     /**
@@ -25,6 +26,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        
     }
 }

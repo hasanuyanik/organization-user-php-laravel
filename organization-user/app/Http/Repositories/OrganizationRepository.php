@@ -1,6 +1,6 @@
 <?php
 
-namespace Http\Repositories;
+namespace App\Http\Repositories;
 
 use App\Models\Organization;
 use Illuminate\Database\Eloquent\Collection;
@@ -10,9 +10,8 @@ class OrganizationRepository
     /**
      * @param array $data
      * 
-     * @return bool
      */
-    public function create(array $data): bool
+    public function create(array $data)
     {
         return Organization::create($data);
     }

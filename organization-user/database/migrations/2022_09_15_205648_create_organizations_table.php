@@ -15,15 +15,14 @@ return new class extends Migration
     {
         Schema::create('organizations', function (Blueprint $table) {
             $table->id();
+            $table->uuid();
             $table->string('name');
             $table->string('email')->unique();
             $table->string('phone');
             $table->text('address');
             $table->timestamps();
 
-            $table->index(['id', 'uuid']);
-
-            $table->foreignId('uuid')->constrained('users');
+            $table->foreign('uuid')->references('uuid')->on('users');
         });
     }
 
